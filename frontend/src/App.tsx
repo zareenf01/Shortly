@@ -1,11 +1,6 @@
-import { useState } from "react";
-
-import "./App.css";
 import LinkForm from "./Components/LinkForm";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="h-screen bg-black px-3 md:px-20 pt-6">
       {/* <h1 className="text-5xl font-bold  text-[#ac6efe]">Hello world!</h1> */}
