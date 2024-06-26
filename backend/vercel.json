@@ -2,15 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/index.ts",
-      "use": "@vercel/node",
-      "config": { "maxDuration": 30 }
+      "src": "dist/index.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "dist/index.ts"
+      "src": "/(.*)",
+      "dest": "dist/index.js"
     }
   ]
 }
