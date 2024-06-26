@@ -14,9 +14,6 @@ const port = process.env.PORT || 3000;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.use((0, cors_1.default)({
-    origin: "https://localhost:3000",
-    credentials: true,
-}));
-app.use("/api/", shortUrl_1.default);
+app.use((0, cors_1.default)());
+app.use("/", shortUrl_1.default);
 app.listen(port, () => console.log(`Server is running on port: ${port}`));
