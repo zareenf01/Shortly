@@ -72,7 +72,7 @@ const LinkForm: React.FunctionComponent<ILinkFormProps> = () => {
           onChange={(e) => setFull(e.target.value)}
         />
         <button
-          className="p-4 mt-5 md:mt-0 px-8 m-2 bg-transparent border flex items-center shadow-md w-full md:w-36 text-center  shadow-[#a783e1] text-white border-[#a783e1] rounded-lg hover:bg-[#a783e1] hover:shadow-none duration-700"
+          className="p-4 mt-5 md:mt-0 px-8 m-2 bg-transparent border  shadow-md w-full md:w-36 text-center  shadow-[#a783e1] text-white border-[#a783e1] rounded-lg hover:bg-[#a783e1] hover:shadow-none duration-700"
           onClick={shortClick}
         >
           {shortUrl ? "Shortend" : "Shorten"}
