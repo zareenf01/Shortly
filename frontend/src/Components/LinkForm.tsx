@@ -10,6 +10,7 @@ const LinkForm: React.FunctionComponent<ILinkFormProps> = () => {
   const [fullURL, setFull] = useState<string>("");
   const [shortUrl, setShortURL] = useState<string>("");
   // const [close, setClose] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const validateURL = (url: string): boolean => {
     try {
       new URL(url);
@@ -21,7 +22,7 @@ const LinkForm: React.FunctionComponent<ILinkFormProps> = () => {
 
   const copyURL = async (url: string) => {
     try {
-      await navigator.clipboard.writeText(`${serverUrl}${url}`);
+      await navigator.clipboard.writeText(`${serverUrl}/${url}`);
       toast.success("URL copied!");
     } catch (error) {
       toast.error("Something went wrong!");
@@ -34,15 +35,20 @@ const LinkForm: React.FunctionComponent<ILinkFormProps> = () => {
       toast.error("Invalid URL");
       return;
     }
-
+    setLoading(true);
+    setShortURL("");
     try {
+      toast.loading("Shortning the URL...");
       const response = await axios.post(`${serverUrl}`, {
         fullUrl: fullURL,
       });
       console.log(response.data);
       setShortURL(response.data.shortUrl);
+      toast.dismiss();
     } catch (error) {
       toast.error("Failed to shorten URL");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -66,27 +72,18 @@ const LinkForm: React.FunctionComponent<ILinkFormProps> = () => {
           onChange={(e) => setFull(e.target.value)}
         />
         <button
-          className="p-4 mt-5 md:mt-0 px-8 m-2 bg-transparent border shadow-md w-full md:w-36 text-center  shadow-[#a783e1] text-white border-[#a783e1] rounded-lg hover:bg-[#a783e1] hover:shadow-none duration-700"
+          className="p-4 mt-5 md:mt-0 px-8 m-2 bg-transparent border flex items-center shadow-md w-full md:w-36 text-center  shadow-[#a783e1] text-white border-[#a783e1] rounded-lg hover:bg-[#a783e1] hover:shadow-none duration-700"
           onClick={shortClick}
         >
           {shortUrl ? "Shortend" : "Shorten"}
         </button>
       </form>
-
-      {shortUrl ? (
+      {loading ? (
+        <h1 className="mx-auto text-4xl font-bold">Loading...</h1>
+      ) : shortUrl ? (
         <div className="relative gradient p-2 md:p-10 md:py-14 m-10 rounded-md justify-between items-center bg-[#7976aa] md:w-full max-w-4xl mx-auto">
-          {/* <img
-            width="24"
-            height="24"
-            src="https://img.icons8.com/ios-glyphs/30/FFFFFF/delete-sign.png"
-            alt="delete-sign"
-            className="absolute top-2 right-3 hover:cursor-pointer"
-            onClick={() => {
-              closeLink();
-            }}
-          /> */}
           <div className="flex justify-between items-center">
-            <h1 className="p-2 text-white md:text-2xl text-left font-bold">{`${serverUrl}${shortUrl}`}</h1>
+            <h1 className="p-2 text-white md:text-2xl text-left font-bold">{`${serverUrl}/${shortUrl}`}</h1>
 
             <img
               width="30"
