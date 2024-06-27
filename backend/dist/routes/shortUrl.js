@@ -11,3 +11,4 @@ router.get("/api", controlUrl_1.getAllUrl);
 router.get("/api/:id", controlUrl_1.getUrl);
 router.delete("/api/:id", controlUrl_1.deleteUrl);
 exports.default = router;
+//# sourceMappingURL=shortUrl.js.map

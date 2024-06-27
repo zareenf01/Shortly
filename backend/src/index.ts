@@ -14,5 +14,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/", shortUrl);
-
+//"start": "node ./dist/index.js",
 app.listen(port, () => console.log(`Server is running on port: ${port}`));

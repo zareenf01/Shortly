@@ -24,3 +24,4 @@ const shortUrlSchema = new mongoose_1.default.Schema({
     timestamps: true,
 });
 exports.urlModel = mongoose_1.default.model("ShortUrl", shortUrlSchema);
+//# sourceMappingURL=urlModel.js.map
