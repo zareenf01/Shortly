@@ -76,4 +76,3 @@ const deleteUrl = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.deleteUrl = deleteUrl;
-//# sourceMappingURL=controlUrl.js.map

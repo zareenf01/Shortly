@@ -18,4 +18,3 @@ app.use((0, cors_1.default)());
 app.use("/", shortUrl_1.default);
 //"start": "node ./dist/index.js",
 app.listen(port, () => console.log(`Server is running on port: ${port}`));
-//# sourceMappingURL=index.js.map
