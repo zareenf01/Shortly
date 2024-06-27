@@ -42,34 +42,33 @@ Make sure you have the following installed:
 
 To clone the repository, run:
 
-```bash
-git clone https://github.com/zareenf01/Shortly.git
+```
+https://github.com/zareenf01/Shortly.git
 ```
 
 ### Installing Dependencies
 Navigate to the project directory and install the necessary dependencies for both frontend and backend:
-Frontend:
-```
-cd shortly/frontend
-npm install
-```
-
 Backend:
 ```
-cd shortly/backend
+cd backend
+npm install
+```
+Frontend:
+```
+cd frontend
 npm install
 ```
 ### Running the Application
-Frontend:
-To run the frontend development server:
-```
-npm run dev
-```
-Now your development server is running on localhost
-
 Backend:
 To run your backend server:
 ```
 npm start
 ```
 Now your backend server is running on localhost:3000
+
+Frontend:
+To run the frontend development server:
+```
+npm run dev
+```
+Now your development server is running on localhost
