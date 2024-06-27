@@ -1,6 +1,6 @@
 # Shortly - URL Shortening Service
 
-Shortly is a web application that allows users to shorten long URLs, copy the shortened URLs, and easily share them. The app is responsive and works seamlessly on both desktop and mobile devices.
+Shortly is your go-to solution for transforming cumbersome URLs into concise, easy-to-share links. Whether you're sharing links on social media, emails, or documents, Shortly streamlines the process with its intuitive interface and powerful features. Quickly shorten any URL with Shortly's efficient service. Just paste your long URL into the input field, and Shortly generates a unique short link instantly. This saves you time and ensures your links are neat and manageable.
 
 ## Features
 
@@ -12,22 +12,24 @@ Shortly is a web application that allows users to shorten long URLs, copy the sh
 ## Built With
 
 ### Frontend
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
 
-- **React**: A JavaScript library for building user interfaces.
-- **Vite**: A fast build tool for modern web projects.
-- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 
 ### Backend
 
-- **Node.js**: A JavaScript runtime built on Chrome's V8 JavaScript engine.
-- **Express**: A fast, unopinionated, minimalist web framework for Node.js.
-- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- [MongoDB](https://www.mongodb.com/)
+- [Express](https://expressjs.com/)
+- [Node.js](https://nodejs.org/)
+- [Mongoose](https://mongoosejs.com/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ### Deployment
 
-- **Vercel**: A platform for frontend frameworks and static sites, built to integrate with your headless content, commerce, or database.
-- **MongoDB Atlas**: A cloud-hosted database service for MongoDB.
+- Frontend deployed on [Vercel](https://vercel.com/).
+- Backend deployed on [Render](https://render.com/)
 
 ## Getting Started
 
@@ -53,11 +55,17 @@ Backend:
 cd backend
 npm install
 ```
+Go to .env_sample file and add your connection string
+```
+MONGO_CONNECTION=YOUR_CONNECTION_STRING
+```
+
 Frontend:
 ```
 cd frontend
 npm install
 ```
+
 ### Running the Application
 Backend:
 To run your backend server:
