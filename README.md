@@ -80,3 +80,7 @@ To run the frontend development server:
 npm run dev
 ```
 Now your development server is running on localhost
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
